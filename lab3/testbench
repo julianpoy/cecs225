@@ -1,0 +1,22 @@
+// Code your testbench here
+// or browse Examples
+module Lab3p1Tester();
+  reg x3, x2, x1, x0;
+  wire f, g, h;
+  
+  Lab3p1 dut(x3, x2, x1, x0, f, g, h);
+  
+  integer i;
+  
+  initial begin
+    $display("x3\tx2\tx1\tx0\t|\tf\tg\th");
+    $display("-------------------------------------");
+	
+    for(i = 0; i < 16; i = i + 1)
+      begin
+        {x3, x2, x1, x0} = i;
+        #1 $display("%b\t%b\t%b\t%b\t|\t%b\t%b\t%b", x3, x2, x1, x0, f, g, h);
+      end
+    $display("");
+  end
+endmodule

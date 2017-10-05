@@ -1,0 +1,15 @@
+module cout(input a,b,c,
+            output cout);
+  
+  wire x,y,z,or1;
+  
+  and
+  a1(x, a, b),
+  a2(y, a, c),
+  a3(z, b, c);
+  
+  or
+  o1(or1, x, y),
+  o2(cout, or1, z);
+  
+endmodule

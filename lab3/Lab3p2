@@ -1,0 +1,25 @@
+// Code your design here
+module Lab3p2(input x3, x2, x1, x0,
+            output f, g, h);
+  
+  wire z5, z4, z3, z2, z1, z0, notx1, notx2;
+  
+  not
+  n0(notx1, x1),
+  n1(notx2, x2);
+  
+  and
+  a0(z0, notx2, notx1),
+  a1(z1, x3, x1),
+  a2(z2, x2, x0),
+  
+  a3(z3, x0, x3),
+  a4(z4, notx1, x0),
+  a5(z5, x3, notx2);
+
+  or
+  o0(f, z0, z1, z2),
+  o1(g, z2, z1),
+  o2(h, z0, z3, z4, z5);
+  
+endmodule
